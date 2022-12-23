@@ -9,31 +9,12 @@ const playBtn = document.querySelector('.bonus__main-wheel-btn'),
       overflow = document.querySelector('body'),
       wrapper = document.querySelector('.bonus'),
       wheelReel = document.querySelector('.bonus__main-wheel-reel'),
-      musicBtn = document.querySelector('.bonus__music'),
-      audio = document.querySelector('.audio'),
       bubbleText = document.querySelector('.bonus__main-woman-txt')
 
-audio.volume = '0';
 
-musicBtn.addEventListener('click', ()=>{
-    if(musicBtn.classList.contains('on')){
-        musicOff()
-    } else {
-        musicOn()
-    }
-})
 
-function musicOn(){
-    musicBtn.classList.add('on')
-    musicBtn.querySelector('img').setAttribute('src', 'img/music-on.svg')
-    audio.play()
-}
 
-function musicOff(){
-    musicBtn.classList.remove('on')
-    musicBtn.querySelector('img').setAttribute('src', 'img/music-off.svg')
-    audio.pause()
-}
+
 
 let triesCounter = 0
 let textAfterRotate = 'Vrei un Bonus? Ai 1 încercări';
@@ -41,7 +22,6 @@ let textAfterRotate = 'Vrei un Bonus? Ai 1 încercări';
 playBtn.addEventListener('click', () => {
     if (triesCounter === 0) {
         runFirstRotation()
-        musicOn()
         bubbleText.innerHTML = textAfterRotate;
 
     } else {
